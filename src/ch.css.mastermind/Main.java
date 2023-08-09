@@ -8,18 +8,22 @@ public class Main {
 
     public static void main(String[] args) {
 
+        for (int i = 0; i < 4; i++) {
 
-        String[] color = {"Red", "Blue", "Green", "Yellow", "Pink", "White", "Black", "Orange"};
+            String[] color = {"Rot", "Blau", "Grün", "Gelb", "Pink", "Weiss", "Schwarz", "Orange"};
 
-        for (int i = 0; i < 8; i++){
+            int myMin = 0;
+            int myMax = 7;
 
-            System.out.println(color[i]);
+
+            int random_int = (int)Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+
+            System.out.println(color[random_int]);
+
         }
 
 
-
-
-
-
     }
+
+
 }
