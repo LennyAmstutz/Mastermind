@@ -1,5 +1,6 @@
 package ch.css.mastermind;
 
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -46,22 +47,18 @@ public class Main {
         }
 
 
-        for (int i = 0; i < 4; i++) {
+        for (int n = 0; n < 4; n++) {
 
             String[] color = {"Rot", "Blau", "Grün", "Gelb", "Pink", "Weiss", "Schwarz", "Orange"};
 
-            int myMin = 0;
-            int myMax = 7;
-
-
-            int random_int1 = (int) Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
-
-
-            System.out.println(color[random_int1]);
-
+            Random random = new Random();
+            int i = random.nextInt(8);
+            System.out.println(color[i]);
 
 
         }
+
+
         for (int n = 1; n <= 12; n++) {
 
 
@@ -73,6 +70,8 @@ public class Main {
                 String key3 = fr.nextLine();
 
                 System.out.println("Runde" + n );
+
+
 
             }
         }
