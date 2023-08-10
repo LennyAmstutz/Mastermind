@@ -34,7 +34,7 @@ public class Main {
                     if (key.equals("S") || key.equals("s")) {
                         start = true;
                         beginn = true;
-                        System.out.println(start);
+
                     }
                 } else if (key.equals("S") || key.equals("s")) {
                     start = true;
@@ -55,7 +55,6 @@ public class Main {
             int i = random.nextInt(8);
             System.out.println(color[i]);
 
-
         }
 
 
@@ -69,11 +68,12 @@ public class Main {
 
                 String key3 = fr.nextLine();
 
-                System.out.println("Runde" + n );
-
+                System.out.println("Runde" + n);
 
 
             }
         }
+
+
     }
 }
