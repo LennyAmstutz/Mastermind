@@ -1,11 +1,17 @@
 package ch.css.mastermind;
 
+
+import java.lang.runtime.SwitchBootstraps;
+import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 
 public class Main {
 
+
+    private static Object Break;
 
     public static void main(String[] args) {
 
@@ -34,7 +40,7 @@ public class Main {
                     if (key.equals("S") || key.equals("s")) {
                         start = true;
                         beginn = true;
-
+                        System.out.println(start);
                     }
                 } else if (key.equals("S") || key.equals("s")) {
                     start = true;
@@ -46,7 +52,7 @@ public class Main {
 
         }
 
-
+        int[] ergebnis1 = new int[4];
         for (int n = 0; n < 4; n++) {
 
             String[] color = {"Rot", "Blau", "Grün", "Gelb", "Pink", "Weiss", "Schwarz", "Orange"};
@@ -54,23 +60,62 @@ public class Main {
             Random random = new Random();
             int i = random.nextInt(8);
             System.out.println(color[i]);
+            ergebnis1[n] = i;
+
 
         }
 
+        int[] ergebnis2 = new int[4];
 
         for (int n = 1; n <= 12; n++) {
 
-
-            for (double d = 0; d < 4; d++) {
-
-                Scanner fr = new Scanner(System.in);
+            for (int d = 0; d < 4; d++) {
+                Scanner sc = new Scanner(System.in);
                 System.out.println("Farbe:");
+                int korektefarben = 0;
 
-                String key3 = fr.nextLine();
+                int number = 0;
+                switch (sc.nextLine().toLowerCase()) {
+                    case "blau" -> number = 1;
+                    case "grün" -> number = 2;
+                    case "gelb" -> number = 3;
+                    case "pink" -> number = 4;
+                    case "weiss" -> number = 5;
+                    case "schwarz" -> number = 6;
+                    case "orange" -> number = 7;
+                    default -> {
+                        korektefarben++;
 
-                System.out.println("Runde" + n);
+
+                    }
+
+                }
+
+                ergebnis2[d] = number;
+
+                //System.out.println(korektefarben);
+
+                if (ergebnis1[0] == ergebnis2[0]
+                        && ergebnis1[1] == ergebnis2[1]
+                        && ergebnis1[2] == ergebnis2[2] &&
+                        ergebnis1[3] == ergebnis2[3]) {
+                    System.out.println("Du hast Gewonnen");
+                }
+
+                //System.out.println(korektefarben);
+            }
+            System.out.println("Runde" + n);
 
 
+            switch() {
+                case a
+                    // code block
+                    break;
+                case y:
+                    // code block
+                    break;
+                default:
+                    // code block
             }
         }
 
