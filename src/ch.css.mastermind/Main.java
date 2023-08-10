@@ -1,13 +1,20 @@
 package ch.css.mastermind;
 
-import java.util.ArrayList;
-import java.util.Random;
+
 import java.util.Scanner;
+
 
 public class Main {
 
 
     public static void main(String[] args) {
+
+
+        //int age = 27;
+
+        //int age2;
+        //age2 = 29;
+        //System.out.println(age);
 
         boolean start = false;
         boolean beginn = false;
@@ -38,7 +45,7 @@ public class Main {
             }else if (key.equals("S") || key.equals("s")) {
                 start = true;
                 beginn = true;
-                System.out.println(start);
+
             }else
                 System.out.println("Diese Taste hat keine Funktion");
         }
@@ -54,9 +61,22 @@ public class Main {
             int myMax = 7;
 
 
-            int random_int = (int)Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+            int random_int1 = (int)Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
 
-            System.out.println(color[random_int]);
+
+            System.out.println(color[random_int1]);
+
+            }
+
+
+        Scanner fr = new Scanner(System.in);
+        System.out.println("Farbe:");
+
+        String userName = fr.nextLine();
+
+
+            if (){
+
 
         }
 
@@ -65,3 +85,6 @@ public class Main {
 
 
 }
+
+
+
