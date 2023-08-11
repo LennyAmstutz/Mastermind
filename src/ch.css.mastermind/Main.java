@@ -1,10 +1,7 @@
 package ch.css.mastermind;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-
 
 public class Main {
 
@@ -16,8 +13,9 @@ public class Main {
 
         boolean start = false;
         boolean beginn = false;
+        boolean again = false;
 
-        if (beginn == false) {
+        if (beginn == false || again == true) {
 
 
             while (!beginn) {
@@ -49,6 +47,7 @@ public class Main {
             }
 
         }
+        boolean win = false;
 
         int[] ergebnis1 = new int[4];
         for (int n = 0; n < 4; n++) {
@@ -59,83 +58,83 @@ public class Main {
             int i = random.nextInt(8);
             System.out.println(color[i]);
             ergebnis1[n] = i;
-
-
         }
 
         int[] ergebnis2 = new int[4];
 
         for (int n = 1; n <= 12; n++) {
+            int korektepositionen = 0;
+            int korektefarben = 0;
 
-            System.out.println("Runde" + n);
+            if (!win) {
 
-            for (int d = 0; d < 4; d++) {
-                Scanner sc = new Scanner(System.in);
-                System.out.println("Farbe:");
+                System.out.println("Runde" + n);
 
-
-                int number = 0;
-                switch (sc.nextLine().toLowerCase()) {
-                    case "blau" -> number = 1;
-                    case "grün" -> number = 2;
-                    case "gelb" -> number = 3;
-                    case "pink" -> number = 4;
-                    case "weiss" -> number = 5;
-                    case "schwarz" -> number = 6;
-                    case "orange" -> number = 7;
-
-                }
-
-                ergebnis2[d] = number;
+                for (int d = 0; d < 4; d++) {
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println("Farbe:");
 
 
-                if (ergebnis1[0] == ergebnis2[0]
-                        && ergebnis1[1] == ergebnis2[1]
-                        && ergebnis1[2] == ergebnis2[2] &&
-                        ergebnis1[3] == ergebnis2[3]) {
-                    System.out.println("Du hast Gewonnen");
-                }
-
-                int korektepositionen = 0;
-                int korektefarben = 0;
-
-                if (ergebnis1[0] == ergebnis2[0]) {
-                    korektepositionen++;
-                }
-                if (ergebnis1[1] == ergebnis2[1]) {
-                    korektepositionen++;
-                }
-                if (ergebnis1[2] == ergebnis2[2]) {
-                    korektepositionen++;
-                }
-                if (ergebnis1[3] == ergebnis2[3]) {
-                    korektepositionen++;
-                    {
-
+                    int number = 0;
+                    switch (sc.nextLine().toLowerCase()) {
+                        case "blau" -> number = 1;
+                        case "grün" -> number = 2;
+                        case "gelb" -> number = 3;
+                        case "pink" -> number = 4;
+                        case "weiss" -> number = 5;
+                        case "schwarz" -> number = 6;
+                        case "orange" -> number = 7;
 
                     }
-                    if (ergebnis1[0] == ergebnis2[1] || ergebnis1[0] == ergebnis2[2] || ergebnis1[0] == ergebnis2[3]) {
 
-                        korektefarben++;
+                    ergebnis2[d] = number;
+
+
+                    if (ergebnis1[0] == ergebnis2[0]
+                            && ergebnis1[1] == ergebnis2[1]
+                            && ergebnis1[2] == ergebnis2[2] &&
+                            ergebnis1[3] == ergebnis2[3]) {
+                        System.out.println("Du hast Gewonnen");
+                        win = true;
+                    } else {
+                        korektepositionen = 0;
+                        korektefarben = 0;
+
+                        if (ergebnis1[0] == ergebnis2[0]) {
+                            korektepositionen++;
+                        }
+                        if (ergebnis1[1] == ergebnis2[1]) {
+                            korektepositionen++;
+                        }
+                        if (ergebnis1[2] == ergebnis2[2]) {
+                            korektepositionen++;
+                        }
+                        if (ergebnis1[3] == ergebnis2[3]) {
+                            korektepositionen++;
+                        }
+
+                        if (ergebnis1[0] == ergebnis2[1] || ergebnis1[0] == ergebnis2[2] || ergebnis1[0] == ergebnis2[3]) {
+
+                            korektefarben++;
+                        }
+                        if (ergebnis1[1] == ergebnis2[2] || ergebnis1[1] == ergebnis2[3] || ergebnis1[1] == ergebnis2[0]) {
+
+                            korektefarben++;
+                        }
+                        if (ergebnis1[2] == ergebnis2[1] || ergebnis1[2] == ergebnis2[0] || ergebnis1[2] == ergebnis2[3]) {
+
+                            korektefarben++;
+                        }
+                        if (ergebnis1[3] == ergebnis2[1] || ergebnis1[3] == ergebnis2[2] || ergebnis1[3] == ergebnis2[0]) {
+
+                            korektefarben++;
+                        }
+
                     }
-                    if (ergebnis1[1] == ergebnis2[2] || ergebnis1[1] == ergebnis2[3] || ergebnis1[1] == ergebnis2[0]) {
-
-                        korektefarben++;
-                    }
-                    if (ergebnis1[2] == ergebnis2[1] || ergebnis1[2] == ergebnis2[0] || ergebnis1[2] == ergebnis2[3]) {
-
-                        korektefarben++;
-                    }
-                    if (ergebnis1[3] == ergebnis2[1] || ergebnis1[3] == ergebnis2[2] || ergebnis1[3] == ergebnis2[0]) {
-
-                        korektefarben++;
-
-
-                        System.out.println("Du hast " + korektefarben + " Farben Richtig");
-                        System.out.println("Du hast  " + korektepositionen + "  Positionen richtig");
-                    }
-
-
+                }
+                if (!win) {
+                    System.out.println("Du hast " + korektefarben + " Farben Richtig");
+                    System.out.println("Du hast  " + korektepositionen + "  Positionen richtig");
                 }
             }
         }
