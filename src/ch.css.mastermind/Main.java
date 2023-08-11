@@ -1,7 +1,5 @@
 package ch.css.mastermind;
 
-
-import java.lang.runtime.SwitchBootstraps;
 import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Random;
@@ -40,7 +38,7 @@ public class Main {
                     if (key.equals("S") || key.equals("s")) {
                         start = true;
                         beginn = true;
-                        System.out.println(start);
+
                     }
                 } else if (key.equals("S") || key.equals("s")) {
                     start = true;
@@ -83,17 +81,12 @@ public class Main {
                     case "weiss" -> number = 5;
                     case "schwarz" -> number = 6;
                     case "orange" -> number = 7;
-                    default -> {
-                        korektefarben++;
-
-
-                    }
 
                 }
 
                 ergebnis2[d] = number;
 
-                //System.out.println(korektefarben);
+
 
                 if (ergebnis1[0] == ergebnis2[0]
                         && ergebnis1[1] == ergebnis2[1]
@@ -102,23 +95,29 @@ public class Main {
                     System.out.println("Du hast Gewonnen");
                 }
 
-                //System.out.println(korektefarben);
+
             }
+            if (ergebnis1[0] == ergebnis2[1] || ergebnis1[0] == ergebnis2[2] || ergebnis1[0] == ergebnis2[3]) {
+
+                int korektefarben;
+            } else if (ergebnis1[1] == ergebnis2[2] || ergebnis1[1] == ergebnis2[3] || ergebnis1[1] == ergebnis2[0]) {
+
+                int korektefarben;
+            } else if (ergebnis1[2] == ergebnis2[1] || ergebnis1[2] == ergebnis2[0] || ergebnis1[2] == ergebnis2[3]) {
+
+                int korektefarben;
+            } else if (ergebnis1[3] == ergebnis2[1] || ergebnis1[3] == ergebnis2[2] || ergebnis1[3] == ergebnis2[0]) {
+
+                int korektefarben;
+            }
+
+
             System.out.println("Runde" + n);
-
-
-            switch() {
-                case a
-                    // code block
-                    break;
-                case y:
-                    // code block
-                    break;
-                default:
-                    // code block
-            }
+            System.out.println("korektefarben");
         }
 
 
     }
 }
+
+
