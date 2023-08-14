@@ -9,6 +9,8 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+
         boolean again = true;
         while (again) {
             boolean start = false;
@@ -70,13 +72,14 @@ public class Main {
 
             int[] ergebnis2 = new int[4];
 
-            for (int n = 1; n <= 12; n++) {
+            for (int r = 1; r <= 12; r++) {
+
                 int korektepositionen = 0;
                 int korektefarben = 0;
 
                 if (!win) {
 
-                    System.out.println("Runde" + n);
+                    System.out.println("Runde" + r);
 
                     for (int d = 0; d < 4; d++) {
                         boolean isColorCorect = false;
@@ -107,29 +110,37 @@ public class Main {
                             }
 
 
-
                             ergebnis2[d] = number;
                         }
                     }
 
 
-                    if (ergebnis1[0] == ergebnis2[0] && ergebnis1[1] == ergebnis2[1] && ergebnis1[2] == ergebnis2[2] && ergebnis1[3] == ergebnis2[3]) {
+                    if (ergebnis1[0] == ergebnis2[0] && ergebnis1[1] == ergebnis2[1] && ergebnis1[2] == ergebnis2[2] && ergebnis1[3] == ergebnis2[3] || r >= 12) {
                         System.out.println("Du hast Gewonnen");
 
+                        boolean answerCorrect = false;
+                        while (!answerCorrect) {
 
-                        System.out.println(" Willst du nochmal Spielen? Tippe nein, wenn du nicht willst und ja wen du willst");
-                        Scanner scanner = new Scanner(System.in);
-                        String key2 = scanner.next().trim();
-                        win = true;
-                        if (key2.equals("nein")) {
-                            again = false;
-                            break;
-                        }else {
-                            again = true;
-                            System.out.println("Diese Taste hat keine Funktion");
+                            System.out.println(" Willst du nochmal Spielen? Tippe nein, wenn du nicht willst und ja wen du willst");
+                            Scanner scanner = new Scanner(System.in);
+                            String key2 = scanner.next().trim();
+                            win = true;
+                            if (key2.equals("nein")) {
+                                again = false;
+                                answerCorrect = true;
+                                System.exit(0);
+
+                            } else if (key2.equals("ja")) {
+                                again = true;
+                                answerCorrect = true;
+
+                            } else {
+                                System.out.println("ungültige eingabe");
+
+                            }
+
+
                         }
-
-
                     } else {
                         korektepositionen = 0;
                         korektefarben = 0;
@@ -171,11 +182,14 @@ public class Main {
                     System.out.println("Du hast  " + korektepositionen + "  Positionen richtig");
                 }
 
-                if (n >= 12) {
+                if (r == 12 && !win) {
                     System.out.println("DU HAST ES WIEDER EINMEL NICHT GESCHAFFT!!!");
                 }
-
             }
         }
     }
 }
+
+
+
+
