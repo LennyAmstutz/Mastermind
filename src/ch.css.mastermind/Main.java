@@ -158,19 +158,19 @@ public class Main {
                             korektepositionen++;
                         }
 
-                        if (ergebnis1[0] == ergebnis2[1] || ergebnis1[0] == ergebnis2[2] || ergebnis1[0] == ergebnis2[3]) {
+                        if (ergebnis1[0] == ergebnis2[0] ||ergebnis1[0] == ergebnis2[1] || ergebnis1[0] == ergebnis2[2] || ergebnis1[0] == ergebnis2[3]) {
 
                             korektefarben++;
                         }
-                        if (ergebnis1[1] == ergebnis2[2] || ergebnis1[1] == ergebnis2[3] || ergebnis1[1] == ergebnis2[0]) {
+                        if (ergebnis1[1] == ergebnis2[1] ||ergebnis1[1] == ergebnis2[2] || ergebnis1[1] == ergebnis2[3] || ergebnis1[1] == ergebnis2[0]) {
 
                             korektefarben++;
                         }
-                        if (ergebnis1[2] == ergebnis2[1] || ergebnis1[2] == ergebnis2[0] || ergebnis1[2] == ergebnis2[3]) {
+                        if (ergebnis1[2] == ergebnis2[2] ||ergebnis1[2] == ergebnis2[1] || ergebnis1[2] == ergebnis2[0] || ergebnis1[2] == ergebnis2[3]) {
 
                             korektefarben++;
                         }
-                        if (ergebnis1[3] == ergebnis2[1] || ergebnis1[3] == ergebnis2[2] || ergebnis1[3] == ergebnis2[0]) {
+                        if (ergebnis1[3] == ergebnis2[3] ||ergebnis1[3] == ergebnis2[1] || ergebnis1[3] == ergebnis2[2] || ergebnis1[3] == ergebnis2[0]) {
 
                             korektefarben++;
                         }
