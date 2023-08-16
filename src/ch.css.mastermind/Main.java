@@ -115,7 +115,7 @@ public class Main {
                     }
 
 
-                    if (ergebnis1[0] == ergebnis2[0] && ergebnis1[1] == ergebnis2[1] && ergebnis1[2] == ergebnis2[2] && ergebnis1[3] == ergebnis2[3] || r >= 12) {
+                    if (ergebnis1[0] == ergebnis2[0] && ergebnis1[1] == ergebnis2[1] && ergebnis1[2] == ergebnis2[2] && ergebnis1[3] == ergebnis2[3]) {
                         System.out.println("Du hast Gewonnen");
 
                         boolean answerCorrect = false;
@@ -189,7 +189,3 @@ public class Main {
         }
     }
 }
-
-
-
-
